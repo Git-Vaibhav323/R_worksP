@@ -99,4 +99,12 @@ Base R only: no extra packages are required.
 - National series ends in 2015; subdivision series ends in 2017.
 - Area-weighted India is not comparable to a simple mean of subdivisions.
 
-Phase 2 scripts (`R_code/03`–`09`) produce descriptive statistics, probability summaries, distribution fits, sampling demonstrations, hypothesis tests, correlation, regression, regional ANOVA, and time-series trend diagnostics. See `results/tables/concept_coverage_matrix.csv`. The academic report in `report/` is written only after those outputs are verified.
+Phase 2 scripts (`R_code/03`–`09`) produce descriptive statistics, probability summaries, distribution fits, sampling demonstrations, hypothesis tests, correlation, regression, regional ANOVA, and time-series trend diagnostics. See `results/tables/concept_coverage_matrix.csv`.
+
+The academic report is `report/project_report.Rmd`. Knit it after the analysis outputs exist:
+
+```r
+source("R_code/11_render_report.R")
+```
+
+Deliverables: `report/Rainfall_Statistics_India_Project_Report.docx` and `.pdf`. See `report/README.md`.

@@ -1,5 +1,5 @@
 REGIONAL ANALYSIS AND ANOVA
-Generated: 2026-10-12 23:11:10 IST
+Generated: 2026-10-12 23:28:05 IST
 
 SCOPE
 All regional means use complete-month years in 1901-2015 so that annual totals are defined

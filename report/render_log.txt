@@ -1,0 +1,5 @@
+Report render: 2026-10-12 23:38:10 IST
+DOCX: E:/Probab_R/report/Rainfall_Statistics_India_Project_Report.docx exists= TRUE
+PDF attempted: TRUE
+PDF produced: TRUE
+PDF error: PDF produced via Word COM, not pdflatex. E:\Probab_R\report\Rainfall_Statistics_India_Project_Report.pdf
