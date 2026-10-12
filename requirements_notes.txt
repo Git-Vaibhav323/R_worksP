@@ -1,0 +1,36 @@
+Project requirements and environment notes
+==========================================
+
+Software
+--------
+- R 4.x (verified with R 4.6.1, 64-bit Windows).
+- RStudio recommended for interactive work.
+- Base R only for Phase 1. Do not require tidyverse, data.table, or other packages
+  unless a later phase documents them.
+
+How the scripts find files
+--------------------------
+- All paths are relative to the project root (the folder that contains data/ and R_code/).
+- Rscript sets the working directory from the script location (--file=).
+- If you source() a script while the working directory is R_code/, the script
+  moves one level up.
+
+Input files (do not modify)
+---------------------------
+- data/rainfall_area-wt_India_1901-2015.csv
+- data/Sub_Division_IMD_2017.csv
+
+Import conventions
+------------------
+- NA strings treated as missing: NA, NaN, N/A, n/a, NULL, null, "-", "--", ".", and blank.
+- A recorded 0 is genuine zero rainfall.
+- YEAR stored as integer in analysis copies.
+- Rainfall stored as numeric millimetres.
+
+Re-run order
+------------
+1. R_code/01_data_inspection.R
+2. R_code/02_data_cleaning.R
+
+Phase 1 deliberately excludes modelling, hypothesis tests, and interpretation
+of monsoon climatology beyond data-quality statements.

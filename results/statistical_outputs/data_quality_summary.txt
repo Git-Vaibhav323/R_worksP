@@ -1,0 +1,340 @@
+DATA QUALITY SUMMARY
+Project: Statistical Analysis of Rainfall Variability and Regional Monsoon Patterns in India
+Phase: 1 — inspection and audit (no statistical modelling)
+Generated: 2026-10-12 22:52:49 IST
+Working directory: E:/Probab_R
+R version: 4.6.1
+
+==============================================================================
+1. SOURCE FILES (UNMODIFIED ORIGINALS)
+==============================================================================
+National series : data/rainfall_area-wt_India_1901-2015.csv  [size 14160 bytes]
+Subdivision series: data/Sub_Division_IMD_2017.csv  [size 445369 bytes]
+
+Provenance (from file names and schema, not assumed extra metadata):
+  - Area-weighted all-India monthly/seasonal/annual rainfall, 1901-2015.
+  - India Meteorological Department (IMD) meteorological subdivision rainfall,
+    file stamp 2017, years present in the file: 1901-2017.
+  Units are millimetres of rainfall (standard IMD reporting). Zero is a valid
+  measurement (no rain), distinct from NA (not reported / not available).
+
+==============================================================================
+2. NATIONAL AREA-WEIGHTED DATASET
+==============================================================================
+Dimensions: 115 rows x 19 columns
+Column names: REGION | YEAR | JAN | FEB | MAR | APR | MAY | JUN | JUL | AUG | SEP | OCT | NOV | DEC | ANNUAL | Jan-Feb | Mar-May | Jun-Sep | Oct-Dec
+Identifying fields: REGION (constant geographical coverage), YEAR
+Monthly rainfall: JAN..DEC
+Seasonal rainfall: Jan-Feb (winter), Mar-May (pre-monsoon),
+                   Jun-Sep (southwest monsoon / JJAS), Oct-Dec (post-monsoon)
+Annual rainfall: ANNUAL
+
+REGION values: INDIA
+YEAR range: 1901 to 2015  (n unique years = 115)
+Missing years inside the min-max span: none
+Duplicate rows: 0
+Duplicate REGION-YEAR keys: 0
+Rows with any missing month: 0
+Rows with all 12 months present: 115
+Missing values by column:
+  REGION       missing = 0
+  YEAR         missing = 0
+  JAN          missing = 0
+  FEB          missing = 0
+  MAR          missing = 0
+  APR          missing = 0
+  MAY          missing = 0
+  JUN          missing = 0
+  JUL          missing = 0
+  AUG          missing = 0
+  SEP          missing = 0
+  OCT          missing = 0
+  NOV          missing = 0
+  DEC          missing = 0
+  ANNUAL       missing = 0
+  Jan-Feb      missing = 0
+  Mar-May      missing = 0
+  Jun-Sep      missing = 0
+  Oct-Dec      missing = 0
+
+Numeric ranges (non-missing):
+  JAN          min = 2.70  max = 58.50  zeros = 0
+  FEB          min = 2.70  max = 53.80  zeros = 0
+  MAR          min = 7.20  max = 63.30  zeros = 0
+  APR          min = 16.10  max = 69.40  zeros = 0
+  MAY          min = 32.10  max = 114.50  zeros = 0
+  JUN          min = 86.50  max = 275.50  zeros = 0
+  JUL          min = 138.90  max = 383.40  zeros = 0
+  AUG          min = 191.70  max = 335.50  zeros = 0
+  SEP          min = 96.90  max = 281.00  zeros = 0
+  OCT          min = 20.00  max = 158.80  zeros = 0
+  NOV          min = 3.60  max = 74.20  zeros = 0
+  DEC          min = 1.60  max = 54.40  zeros = 0
+  ANNUAL       min = 920.80  max = 1480.30  zeros = 0
+  Jan-Feb      min = 11.70  max = 86.30  zeros = 0
+  Mar-May      min = 84.50  max = 209.70  zeros = 0
+  Jun-Sep      min = 679.50  max = 1094.50  zeros = 0
+  Oct-Dec      min = 52.70  max = 207.50  zeros = 0
+
+Seasonal/annual vs constituent months (tolerance 1.0 mm):
+  Jan-Feb: comparable = 115; inconsistent = 0; max |diff| = 0.1000 mm; median |diff| = 0.0000 mm
+  Mar-May: comparable = 115; inconsistent = 0; max |diff| = 0.1000 mm; median |diff| = 0.0000 mm
+  Jun-Sep: comparable = 115; inconsistent = 0; max |diff| = 0.2000 mm; median |diff| = 0.0000 mm
+  Oct-Dec: comparable = 115; inconsistent = 0; max |diff| = 0.1000 mm; median |diff| = 0.0000 mm
+  ANNUAL: comparable = 115; inconsistent = 0; max |diff| = 0.3000 mm; median |diff| = 0.1000 mm
+
+==============================================================================
+3. IMD SUBDIVISION DATASET
+==============================================================================
+Dimensions: 4188 rows x 19 columns
+Column names: SUBDIVISION | YEAR | JAN | FEB | MAR | APR | MAY | JUN | JUL | AUG | SEP | OCT | NOV | DEC | ANNUAL | JF | MAM | JJAS | OND
+Identifying fields: SUBDIVISION, YEAR
+Monthly rainfall: JAN..DEC
+Seasonal rainfall: JF, MAM, JJAS, OND  (same IMD season grouping as national)
+Annual rainfall: ANNUAL
+
+Unique SUBDIVISION labels (after trimws): 36
+  - Andaman & Nicobar Islands
+  - Arunachal Pradesh
+  - Assam & Meghalaya
+  - Bihar
+  - Chhattisgarh
+  - Coastal Andhra Pradesh
+  - Coastal Karnataka
+  - East Madhya Pradesh
+  - East Rajasthan
+  - East Uttar Pradesh
+  - Gangetic West Bengal
+  - Gujarat Region
+  - Haryana Delhi & Chandigarh
+  - Himachal Pradesh
+  - Jammu & Kashmir
+  - Jharkhand
+  - Kerala
+  - Konkan & Goa
+  - Lakshadweep
+  - Madhya Maharashtra
+  - Matathwada
+  - Naga Mani Mizo Tripura
+  - North Interior Karnataka
+  - Orissa
+  - Punjab
+  - Rayalseema
+  - Saurashtra & Kutch
+  - South Interior Karnataka
+  - Sub Himalayan West Bengal & Sikkim
+  - Tamil Nadu
+  - Telangana
+  - Uttarakhand
+  - Vidarbha
+  - West Madhya Pradesh
+  - West Rajasthan
+  - West Uttar Pradesh
+
+YEAR range: 1901 to 2017  (n unique years = 117)
+Duplicate rows: 0
+Duplicate SUBDIVISION-YEAR keys: 0
+Rows with all 12 months present: 4162
+Rows with 1-11 months missing: 26
+Rows with all 12 months missing: 0
+
+Missing values by column:
+  SUBDIVISION  missing = 0  (0.00%)
+  YEAR         missing = 0  (0.00%)
+  JAN          missing = 4  (0.10%)
+  FEB          missing = 3  (0.07%)
+  MAR          missing = 6  (0.14%)
+  APR          missing = 4  (0.10%)
+  MAY          missing = 3  (0.07%)
+  JUN          missing = 5  (0.12%)
+  JUL          missing = 7  (0.17%)
+  AUG          missing = 4  (0.10%)
+  SEP          missing = 6  (0.14%)
+  OCT          missing = 7  (0.17%)
+  NOV          missing = 11  (0.26%)
+  DEC          missing = 10  (0.24%)
+  ANNUAL       missing = 26  (0.62%)
+  JF           missing = 6  (0.14%)
+  MAM          missing = 9  (0.21%)
+  JJAS         missing = 10  (0.24%)
+  OND          missing = 13  (0.31%)
+
+Genuine zeros vs missing (monthly fields):
+  JAN: zeros = 620; missing = 4; negative = 0
+  FEB: zeros = 665; missing = 3; negative = 0
+  MAR: zeros = 455; missing = 6; negative = 0
+  APR: zeros = 230; missing = 4; negative = 0
+  MAY: zeros = 82; missing = 3; negative = 0
+  JUN: zeros = 0; missing = 5; negative = 0
+  JUL: zeros = 1; missing = 7; negative = 0
+  AUG: zeros = 1; missing = 4; negative = 0
+  SEP: zeros = 0; missing = 6; negative = 0
+  OCT: zeros = 89; missing = 7; negative = 0
+  NOV: zeros = 674; missing = 11; negative = 0
+  DEC: zeros = 903; missing = 10; negative = 0
+
+Implausible-value screen (month < 0 mm or month > 4000 mm):
+  None detected in either dataset.
+
+Seasonal/annual vs constituent months (tolerance 1.0 mm; only rows where
+all constituent months AND the derived field are non-missing):
+  JF: comparable = 4182; inconsistent = 0; max |diff| = 0.1000 mm; median |diff| = 0.0000 mm
+  MAM: comparable = 4179; inconsistent = 0; max |diff| = 0.1000 mm; median |diff| = 0.0000 mm
+  JJAS: comparable = 4178; inconsistent = 0; max |diff| = 0.2000 mm; median |diff| = 0.0000 mm
+  OND: comparable = 4175; inconsistent = 0; max |diff| = 0.1000 mm; median |diff| = 0.0000 mm
+  ANNUAL: comparable = 4162; inconsistent = 0; max |diff| = 0.4000 mm; median |diff| = 0.1000 mm
+
+Coverage is not a balanced panel. Several subdivisions start after 1901
+and/or contain internal year gaps (for example Andaman & Nicobar Islands
+has no 1909 row in the source file). See:
+  results/tables/subdivision_year_coverage.csv
+  results/tables/subdivision_year_completeness.csv
+
+==============================================================================
+4. CROSS-DATASET NOTES
+==============================================================================
+Geographical coverage:
+  National file REGION = INDIA (one all-India area-weighted series).
+  Subdivision file contains 36 IMD meteorological subdivisions.
+  These are NOT the same spatial support: subdivision values must not be
+  averaged with equal weights to reconstruct the national series.
+Time span:
+  National: 1901-2015.
+  Subdivision: 1901-2017.
+  Overlap for joint work: 1901-2015.
+Season labels differ in spelling (Jan-Feb vs JF) but match IMD definitions.
+Both files report rainfall in millimetres; monthly and seasonal fields are
+source-provided, not computed by this project, unless a later cleaning step
+explicitly reconstructs a derived total from complete months.
+
+==============================================================================
+5. CLEANING IMPLICATIONS (implemented in 02_data_cleaning.R)
+==============================================================================
+- Preserve original CSVs in data/.
+- Do not drop incomplete years; missing months remain NA.
+- Do not impute rainfall. Derived seasonal/annual fields may be reconstructed
+  from complete constituent months into NEW columns only.
+- Do not delete statistical outliers; flag them.
+- Trim region labels; keep historical IMD names (e.g. Orissa, Matathwada).
+- Treat zeros as valid dry-month observations.
+
+Inspection artefacts:
+  results/tables/data_structure_summary.csv
+  results/tables/missing_values_summary.csv
+  results/tables/seasonal_annual_consistency.csv
+  results/tables/subdivision_year_coverage.csv
+  results/tables/subdivision_year_completeness.csv
+  results/statistical_outputs/data_quality_summary.txt
+
+
+==============================================================================
+6. CLEANING DECISIONS AND COUNTS (from 02_data_cleaning.R)
+==============================================================================
+Run time: 2026-10-12 22:52:58 IST
+
+ step_id dataset                action                                  
+  1      national_area_weighted import                                  
+  2      national_area_weighted trim_REGION                             
+  3      national_area_weighted YEAR_to_integer                         
+  4      national_area_weighted rainfall_to_numeric                     
+  5      national_area_weighted negative_rainfall_screen                
+  6      national_area_weighted duplicate_investigation                 
+  7      national_area_weighted consistency_flags                       
+  8      national_area_weighted annual_reconstruct_if_source_NA         
+  9      national_area_weighted outlier_flag_iqr_k3                     
+ 10      national_area_weighted write_cleaned_copy                      
+ 11      imd_subdivision        import                                  
+ 12      imd_subdivision        standardise_SUBDIVISION_whitespace      
+ 13      imd_subdivision        YEAR_to_integer                         
+ 14      imd_subdivision        rainfall_to_numeric                     
+ 15      imd_subdivision        retain_zeros_and_missing                
+ 16      imd_subdivision        negative_rainfall_screen                
+ 17      imd_subdivision        duplicate_investigation                 
+ 18      imd_subdivision        consistency_flags                       
+ 19      imd_subdivision        reconstruct_derived_totals_if_source_NA 
+ 20      imd_subdivision        outlier_flag_iqr_k3_by_subdivision_month
+ 21      imd_subdivision        retain_unbalanced_panel                 
+ 22      imd_subdivision        write_cleaned_copy                      
+ justification                                                                                                                                             
+ Read original CSV with explicit NA strings; originals not modified.                                                                                       
+ Remove leading/trailing whitespace from region labels.                                                                                                    
+ Calendar year is a discrete index, not a continuous measurement.                                                                                          
+ Rainfall is a continuous millimetre measurement; coercion failures would become NA (none expected).                                                       
+ Negative millimetres are physically impossible; none are deleted because none were found, or they would be flagged not dropped.                           
+ Exact row duplicates and REGION-YEAR duplicates were counted. No rows removed because none were found.                                                    
+ Source seasonal/annual totals were retained. Differences > 1 mm versus the sum of constituent months are flagged, not overwritten.                        
+ Not imputation of unobserved rain: ANNUAL is a total of observed months. Filled only when all 12 months exist and source ANNUAL is NA.                    
+ Extreme rainfall years are scientifically informative (floods/droughts). Flagged with a conservative 3xIQR rule; no rows deleted.                         
+ Analysis copy written; original data/ CSV untouched.                                                                                                      
+ Read original CSV with explicit NA strings; originals not modified.                                                                                       
+ Trim and collapse repeated whitespace. Historical IMD names (Orissa, Matathwada, Rayalseema) are retained so records stay matchable to the source.        
+ Calendar year is a discrete index.                                                                                                                        
+ Rainfall coerced to numeric millimetres. Source 'NA' tokens already mapped to R NA on import.                                                             
+ Zero millimetres remain as dry months. NA remains missing. Incomplete rows were not deleted.                                                              
+ Negative rainfall would be flagged, not deleted.                                                                                                          
+ No SUBDIVISION-YEAR duplicates. No rows removed.                                                                                                          
+ Source derived totals retained. Inconsistencies > 1 mm versus complete month sums are flagged, not overwritten.                                           
+ Where IMD omitted ANNUAL/JF/MAM/JJAS/OND but all constituent months are observed, the analysis column is the month sum. This does not invent monthly rain.
+ Outliers flagged within each subdivision and month using 3xIQR. Extreme monsoon totals are retained.                                                      
+ Internal missing years (e.g. a subdivision with 1908 then 1910) are left as absent rows. No years were invented.                                          
+ Analysis copy written; original data/ CSV untouched.                                                                                                      
+ n_affected
+  115      
+    0      
+    0      
+    0      
+    0      
+    0      
+    0      
+    0      
+    2      
+  115      
+ 4188      
+    0      
+    0      
+    0      
+   70      
+    0      
+    0      
+    0      
+    0      
+  887      
+    9      
+ 4188      
+ details                                                                                                    
+ file= data/rainfall_area-wt_India_1901-2015.csv                                                            
+ INDIA                                                                                                      
+ range=1901-2015                                                                                            
+ JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC, ANNUAL, Jan-Feb, Mar-May, Jun-Sep, Oct-Dec     
+ threshold: month < 0 mm                                                                                    
+ exact_dup_rows=0; key_dups=0                                                                               
+ annual_inconsistent=0; seasonal_inconsistent=0; tolerance=1 mm                                             
+ New column ANNUAL_analysis; source ANNUAL unchanged.                                                       
+ rows_with_any_month_flag=2; total_month_flags=2                                                            
+ results/cleaned_data/india_national_rainfall_cleaned.csv                                                   
+ file= data/Sub_Division_IMD_2017.csv                                                                       
+ n_unique_labels=36                                                                                         
+ range=1901-2017                                                                                            
+ JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC, ANNUAL, JF, MAM, JJAS, OND                     
+ monthly_zeros=3720; monthly_NAs=70; rows_kept=4188                                                         
+ threshold: month < 0 mm                                                                                    
+ exact_key_dups=0                                                                                           
+ annual=0; seasonal=0                                                                                       
+ ANNUAL_filled=0; JF=0; MAM=0; JJAS=0; OND=0                                                                
+ rows_with_any_month_flag=887; total_month_flags=1087                                                       
+ Andaman & Nicobar Islands: 1909,1943,1944,1945,1948 | Arunachal Pradesh: 1954,1955,1956 | Lakshadweep: 1918
+ results/cleaned_data/imd_subdivision_rainfall_cleaned.csv                                                  
+
+Cleaned analysis files:
+  results/cleaned_data/india_national_rainfall_cleaned.csv  rows=115 cols=31
+  results/cleaned_data/imd_subdivision_rainfall_cleaned.csv  rows=4188 cols=41
+
+Unresolved issues carried into later phases:
+  - Subdivision panel is unbalanced (late starts and internal year gaps).
+  - Monthly NA values remain NA; analysis of annual/seasonal totals should
+    use *_analysis columns and/or restrict to months_complete == TRUE.
+  - A small number of source seasonal/annual totals may differ from month
+    sums by more than 1 mm; source values are kept and flagged.
+  - National and subdivision series have different spatial support and
+    slightly different end years (2015 vs 2017).
+  - Original files in data/ were not modified.
