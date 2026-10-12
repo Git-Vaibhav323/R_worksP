@@ -1,0 +1,29 @@
+TIME-SERIES AND TREND ANALYSIS
+Generated: 2026-10-12 23:10:13 IST
+
+THIS IS NOT A CLIMATE-CHANGE ATTRIBUTION STUDY.
+A slope or Mann-Kendall p-value describes monotonic association with time in
+1901-2015. It does not identify greenhouse gases, aerosols, land-use, or natural
+decadal variability as causes, and it does not forecast the next century.
+
+DESCRIPTIVE TOOLS
+The 11-year moving average is a smoother (centred). End years are missing because
+the window is incomplete. It is not a statistical test.
+
+OLS TREND vs RANK-BASED TREND
+Annual OLS slope = -0.2967 mm/year, p = 0.3423, R^2 = 0.0080.
+Durbin-Watson = 1.742. Values near 2 suggest little lag-1 residual correlation; values << 2 suggest positive autocorrelation and anti-conservative OLS p-values.
+Mann-Kendall on annual totals: S = -357, tau = -0.054, Z = -0.861, p = 0.3895.
+Sen's slope (median pairwise slope) = -0.2722 mm/year.
+Jun-Sep Mann-Kendall p = 0.3135, Sen slope = -0.2536 mm/year.
+Mann-Kendall assumes independent observations under H0 (or uses the simple variance
+formula implemented here). Strong autocorrelation would require a modified variance;
+inspect the ACF before treating a borderline p-value as decisive.
+
+AUTOCORRELATION
+Lag-1 sample ACF of annual rainfall = 0.125 (white-noise 95% bound about 0.183).
+If |ACF| stays inside the bound, serial dependence is not dominating the series.
+
+DECISION LANGUAGE
+At alpha = 0.05, annual Mann-Kendall: do not reject no-trend; absence of a significant MK statistic is not proof of stationarity.
+Distinguish this from the OLS line, which always exists as a descriptive fit.

@@ -48,13 +48,23 @@ report/                            reserved for the academic write-up
 ```r
 source("R_code/01_data_inspection.R")
 source("R_code/02_data_cleaning.R")
+source("R_code/03_descriptive_analysis.R")
+source("R_code/04_probability_distributions.R")
+source("R_code/05_sampling_and_intervals.R")
+source("R_code/06_hypothesis_testing.R")
+source("R_code/07_correlation_regression.R")
+source("R_code/08_regional_analysis.R")
+source("R_code/09_time_series_analysis.R")
 ```
+
+Or run Phase 2 in one call: `source("R_code/10_run_phase2.R")`.
 
 From PowerShell in the project root (adjust the R path if needed):
 
 ```powershell
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" R_code/01_data_inspection.R
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" R_code/02_data_cleaning.R
+& "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" R_code/10_run_phase2.R
 ```
 
 Base R only: no extra packages are required.
@@ -89,4 +99,4 @@ Base R only: no extra packages are required.
 - National series ends in 2015; subdivision series ends in 2017.
 - Area-weighted India is not comparable to a simple mean of subdivisions.
 
-Phase 1 does not estimate trends, correlations, or inferential models.
+Phase 2 scripts (`R_code/03`–`09`) produce descriptive statistics, probability summaries, distribution fits, sampling demonstrations, hypothesis tests, correlation, regression, regional ANOVA, and time-series trend diagnostics. See `results/tables/concept_coverage_matrix.csv`. The academic report in `report/` is written only after those outputs are verified.

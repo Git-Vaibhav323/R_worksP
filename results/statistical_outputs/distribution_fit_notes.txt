@@ -1,0 +1,34 @@
+PROBABILITY DISTRIBUTIONS
+Generated: 2026-10-12 23:09:46 IST
+Bootstrap replications B = 400 ; seed 19012015
+
+WHY NOT ASSUME NORMALITY
+Annual rainfall is bounded below by 0 and typically right-skewed. A normal model
+assigns probability to negative rainfall. Shapiro-Wilk tests the normal model directly.
+India annual Shapiro-Wilk W = 0.9926, p = 0.8014.
+
+GAMMA
+A gamma random variable is positive and can be right-skewed. Parameters were estimated
+by maximum likelihood (nlm), started at method-of-moments values.
+Annual gamma MLE: shape = 114.044, rate = 0.09648, scale = 10.36 mm; AIC = 1412.3.
+Bootstrap KS (parameters re-estimated in each replicate): D = 0.0612, p = 0.3725.
+The ordinary ks.test p-value with plugged-in MLE is NOT valid (Lilliefors problem) and is not used.
+For reference only, unadjusted ks.test D = 0.0612.
+
+EXPONENTIAL
+The exponential law is a gamma with shape = 1. It is a waiting-time model with
+memorylessness and the restriction SD = mean. All-India annual rainfall has mean near
+1182.0 mm and SD near 110.7 mm, so SD << mean; exponential is scientifically implausible here.
+It is fitted only to demonstrate a poor reference model, not as a candidate climate law.
+Exponential AIC = 1859.2 versus gamma AIC = 1412.3 and normal AIC = 1411.9.
+Bootstrap KS for exponential: D = 0.5411, p = < 0.0001.
+
+ZEROS
+National monthly and annual series have no zeros. Subdivision dry-season months do.
+A single gamma or exponential cannot place a point mass at zero. The West Rajasthan
+December example uses an empirical P(zero) plus gamma on positive millimetres.
+West Rajasthan DEC: n = 117, zeros = 43, P(zero) = 0.368.
+
+LIMITATIONS
+Years are temporally dependent, so iid goodness-of-fit p-values are approximate.
+Bootstrap B = 400 is adequate for reporting to two decimals, not for tiny p-values.

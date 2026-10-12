@@ -1,0 +1,5 @@
+"test","statistic","df1","df2","p_value","n_years_balanced","n_regions"
+"Classical one-way ANOVA",2134.70091055616,5,678,0,114,6
+"Welch one-way ANOVA",1988.46953767905,5,307.229062230244,1.41006140858862e-231,114,6
+"Kruskal-Wallis",639.913881990041,NA,5,4.79183237070012e-136,114,6
+"Fligner-Killeen (variances)",202.212176608485,5,NA,9.55301790069577e-42,114,6

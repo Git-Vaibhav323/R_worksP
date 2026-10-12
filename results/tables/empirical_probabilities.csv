@@ -1,0 +1,10 @@
+"event","definition","numerator","denominator","empirical_probability"
+"Annual rainfall greater than the 1901-2015 sample mean (LPA analogue)","ANNUAL > 1182.03 mm",59,115,0.51304347826087
+"Unusually dry year (below historical 10th percentile)","ANNUAL < 1041.30 mm (10th percentile of 1901-2015)",12,115,0.104347826086957
+"Unusually wet year (above historical 90th percentile)","ANNUAL > 1331.30 mm (90th percentile of 1901-2015)",12,115,0.104347826086957
+"Deficient southwest monsoon (IMD-style: JJAS < 90% of series mean)","Jun-Sep < 0.90 * 890.26 mm",25,115,0.217391304347826
+"Normal southwest monsoon (90-110% of series mean)","0.90*LPA <= Jun-Sep <= 1.10*LPA",74,115,0.643478260869565
+"Excess southwest monsoon (JJAS > 110% of series mean)","Jun-Sep > 1.10 * 890.26 mm",16,115,0.139130434782609
+"Conditional: deficient monsoon given dry winter (JF < 25th percentile)","P(JJAS deficient | Jan-Feb < 33.80 mm)",6,29,0.206896551724138
+"Conditional: deficient monsoon given not-dry winter","P(JJAS deficient | Jan-Feb >= 25th percentile)",19,86,0.22093023255814
+"Southwest monsoon is the wettest IMD season of the year","Jun-Sep == max(Jan-Feb, Mar-May, Jun-Sep, Oct-Dec)",115,115,1

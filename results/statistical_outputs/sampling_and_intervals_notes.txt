@@ -1,0 +1,27 @@
+SAMPLING, CENTRAL LIMIT THEOREM, AND CONFIDENCE INTERVALS
+Generated: 2026-10-12 23:10:00 IST
+Random seed: 19012015
+
+TEACHING SIMULATION VERSUS DATA
+The CLT panels resample WITH REPLACEMENT from the 115 observed annual totals.
+They are not additional meteorological years and must not be averaged into the data.
+
+CLT DESIGN
+Parent mean = 1182.03 mm, parent SD = 110.69 mm.
+Replications = 4000 for sample sizes 5, 15, 40.
+As n grows, the histogram of sample means concentrates at the parent mean and
+becomes more symmetric. Theoretical SE = parent_SD / sqrt(n).
+For n = 40, simulated SD of means = 17.351 mm; theoretical SE = 17.501 mm.
+
+CONFIDENCE INTERVALS
+Mean intervals use Student's t with df = n-1. They assume iid normal (or approximately
+normal means by the CLT). Serial correlation in annual rainfall can make the true
+uncertainty larger than these intervals; treat them as iid-benchmark intervals.
+95% CI for mean annual rainfall: 1161.59 to 1202.48 mm.
+Wald intervals for the deficient-monsoon proportion assume iid Bernoulli trials;
+years are not independent experiments. Higher confidence levels produce wider intervals.
+
+INFERENCE FROM A HISTORICAL TIME SERIES
+The 115 years are one realised path of a climate process, not a simple random sample
+from a super-population of years. Estimates describe this record. Probability statements
+about a 'random year' require extra assumptions (stationarity, weak dependence).

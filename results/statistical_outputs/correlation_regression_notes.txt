@@ -1,0 +1,33 @@
+CORRELATION AND REGRESSION
+Generated: 2026-10-12 23:10:01 IST
+
+CORRELATION RULES USED
+Pearson measures linear association; Spearman measures monotonic association.
+Neither implies causation. Seasonal totals JF, MAM, JJAS, OND are different seasons,
+so their correlations are not part-whole artefacts. Annual vs Jun-Sep is omitted
+because Jun-Sep is a large numerical component of annual rainfall.
+
+Largest |Pearson| among seasons is documented in seasonal_pairwise_correlations.csv.
+Example: Jan-Feb vs Jun-Sep Pearson r = 0.143 (p = 0.1281).
+A weak winter-monsoon correlation, if present, is association only.
+Outliers and nonlinearity: see scatterplots. Time dependence can inflate significance.
+
+MODEL 1  ANNUAL = beta0 + beta1 * YEAR + error
+Fitted: ANNUAL = 1762.885 + (-0.2967) * YEAR
+Slope SE = 0.3110, t = -0.954, p = 0.3423.
+95% CI for slope: [-0.9129, 0.3196] mm per year.
+R^2 = 0.0080, adjusted R^2 = -0.0008.
+Durbin-Watson = 1.742; residual lag-1 correlation p = 0.2098.
+Shapiro-Wilk on residuals p = 0.8300; heteroscedasticity screen (e^2 on fitted) p = 0.2430.
+Cook's distance > 4/n flags 8 year(s) as influential (not deleted).
+If residuals are autocorrelated, OLS p-values for the slope are not fully reliable;
+script 09 reports Mann-Kendall and Sen's slope as rank-based trend inference.
+This slope is a descriptive linear summary of 1901-2015, not proof of climate change.
+
+MODEL 2  Jun-Sep = beta0 + beta1*YEAR + beta2*Jan-Feb + error
+Rationale: ask whether winter rainfall is associated with monsoon rainfall after a
+linear year term. Jan-Feb is not a subset of Jun-Sep.
+R^2 = 0.0242, adjusted R^2 = 0.0068.
+YEAR coefficient p = 0.5079; Jan-Feb coefficient p = 0.1643.
+Durbin-Watson = 1.865. Approx. VIF (year, Jan-Feb) = 1.03.
+No extra predictors were added merely to raise R^2.

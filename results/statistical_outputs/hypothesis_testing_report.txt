@@ -1,0 +1,88 @@
+HYPOTHESIS TESTING REPORT
+Generated: 2026-10-12 23:10:01 IST
+Significance level alpha = 0.05 for all tests in this file.
+Not rejecting H0 does not prove H0. P-values are not posterior probabilities.
+
+================================================================
+TEST 1. One-sample t-test
+================================================================
+Research question: Is the mean of India area-weighted annual rainfall different
+from 1180 mm (a commonly quoted ~118 cm all-India annual figure used as a fixed benchmark)?
+H0: mu = 1180 mm.  H1: mu != 1180 mm.
+n = 115 years (1901-2015). Sample mean = 1182.03 mm.
+Assumptions: observations iid normal. Shapiro-Wilk on annual totals:
+  W = 0.9926, p = 0.8014.
+Mild skewness is tolerated because n = 115 and the CLT supports the t approximation.
+Years are a time series, so iid is an approximation (see script 09).
+t = 0.197, df = 114.0, p = 0.8441.
+95% CI for mu: [1161.588, 1202.482] mm.
+Decision: Do not reject H0.
+Interpretation: compare the interval to 1180 mm; a rejection would mean the historical
+mean of THIS series is not 1180 mm, not that textbooks are 'wrong' in general.
+
+TEST 1b. Wilcoxon signed-rank (robust location)
+V = 3420.0, p = 0.8136, 95% CI (pseudomedian) [1160.850, 1204.150].
+Decision: Do not reject H0.
+
+================================================================
+TEST 2. Welch two-sample t-test (independent regions)
+================================================================
+Research question: Do Kerala and West Rajasthan differ in mean annual rainfall?
+H0: mu_K = mu_R.  H1: mu_K != mu_R.
+n_Kerala = 115 ; n_West Rajasthan = 115 ; complete years 1901-2015.
+These are different places, so a two-sample design is appropriate. Do NOT use this
+design on two seasons from the same year (that would be paired; see Test 3).
+Shapiro-Wilk Kerala p = 0.0460; West Rajasthan p = 0.0010.
+Sample variances: Kerala 178178.7, West Rajasthan 11846.7 (unequal; Welch is used, not Student's equal-variance t).
+t = 64.768, df = 129.09, p = < 0.0001.
+95% CI for mu_K - mu_R: [2552.389, 2713.241] mm.
+Decision: Reject H0.
+Interpretation: a large difference is expected climatologically (wet coast vs arid NW).
+The test documents that difference; it is not a surprising scientific discovery.
+Wilcoxon rank-sum W = 13225.0, p = < 0.0001.
+
+================================================================
+TEST 3. Paired t-test (same year, two seasons)
+================================================================
+Research question: Within a year, does southwest-monsoon rainfall differ from post-monsoon?
+H0: mean(JJAS - OND) = 0.  H1: not 0.
+n = 115 paired years. Pairing is required because both seasons belong to the same year.
+Shapiro-Wilk on differences: W = 0.9856, p = 0.2557.
+t = 96.377, df = 114.0, p = < 0.0001.
+95% CI for mean seasonal difference: [754.543, 786.213] mm.
+Decision: Reject H0.
+Paired Wilcoxon p = < 0.0001.
+
+================================================================
+TEST 4. Chi-square goodness-of-fit (categorical frequencies, not raw mm)
+================================================================
+Each year is classified by which of the four IMD seasons has the largest total.
+H0: each season is equally likely to be wettest (probability 1/4).
+This is a valid categorical GOF. Chi-square is NOT applied to raw millimetres.
+Counts: Jan-Feb=0, Mar-May=0, Jun-Sep=115, Oct-Dec=0 .
+X^2 = 345.00, df = 3, p = < 0.0001.
+Expected count under H0 = 28.75 per season. Decision: Reject H0.
+A rejection is climatologically expected because the southwest monsoon dominates India.
+
+================================================================
+TEST 5. Chi-square independence (period x monsoon category)
+================================================================
+H0: early/late period is independent of deficient/normal/excess JJAS class.
+Classes use 90% and 110% of the 1901-2015 JJAS mean.
+Expected cell counts:
+           
+period      deficient normal excess
+  1901-1957     12.39  36.68   7.93
+  1958-2015     12.61  37.32   8.07
+X^2 = 0.34, df = 2, p = 0.8456.
+Decision: Do not reject H0.
+Limitation: adjacent years are dependent, so the chi-square nominal p-value is approximate.
+This is not a test of climate change causation.
+
+Correlation tests (detail in script 07):
+Pearson JF vs JJAS r = 0.143, p = 0.1281.
+Pearson YEAR vs annual r = -0.089, p = 0.3423.
+
+One-way ANOVA and post-hoc regional comparisons are in 08_regional_analysis.R
+because they require the subdivision panel and assumption checks by region.
+Regression coefficient tests are in 07_correlation_regression.R.

@@ -1,0 +1,34 @@
+DESCRIPTIVE STATISTICS AND EMPIRICAL PROBABILITIES
+Generated: 2026-10-12 23:11:08 IST
+
+Units are millimetres. National series: 115 complete years, 1901-2015.
+Subdivision summaries use years with all 12 months observed, 1901-2015.
+
+INTERPRETATION OF MEASURES
+Mean: centre of mass of the historical series; sensitive to wet extremes.
+Median: 50% of years are wetter, 50% drier; more robust than the mean.
+Mode (rounded to 0.1 mm): often undefined for a continuous series with unique values;
+  NA in the table means no unique most-frequent rounded value.
+Range / min / max: observed envelope, not a prediction of future extremes.
+Variance and SD: year-to-year (or month-to-month) spread in mm (SD) or mm^2 (variance).
+Quartiles, IQR, percentiles: describe the bulk of the distribution without assuming normality.
+CV = 100*SD/mean: relative variability, comparable across wet and dry regions.
+Skewness: rainfall is typically right-skewed (long wet tail).
+Excess kurtosis: tail weight relative to a normal distribution (normal = 0).
+SE = SD/sqrt(n): sampling variability of the mean if years were iid; see script 05
+  for why that assumption is only approximate in a time series.
+
+India annual mean = 1182.03 mm; median = 1190.50 mm; SD = 110.69 mm; CV = 9.36%; skewness = 0.020.
+India Jun-Sep mean = 890.26 mm (about 75.3% of mean annual), SD = 89.18 mm.
+
+EMPIRICAL PROBABILITIES
+These are historical relative frequencies in 1901-2015, not proven future probabilities.
+They would equal long-run probabilities only under stationarity and iid sampling,
+which rainfall time series need not satisfy (see time-series script).
+IMD-style deficient/normal/excess uses 90% and 110% of THIS series mean as LPA analogue,
+not the official IMD 50-year long-period average, which is not stored in these files.
+
+P(deficient JJAS) = 0.217; P(normal) = 0.643; P(excess) = 0.139.
+P(deficient monsoon | dry winter) = 0.207 versus P(deficient | not dry winter) = 0.221.
+A difference, if any, is descriptive association, not a causal claim about winter rain
+controlling the monsoon.

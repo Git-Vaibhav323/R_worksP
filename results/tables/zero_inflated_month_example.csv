@@ -1,0 +1,2 @@
+"series","n","n_zero","p_zero","n_positive","gamma_shape_positive","gamma_rate_positive","note"
+"West Rajasthan December (complete years)",117,43,0.367521367521368,74,0.654329623604457,0.21949357032809,"Hurdle: Bernoulli(zero) plus gamma on positive amounts. Exponential is not used for the zero mass."

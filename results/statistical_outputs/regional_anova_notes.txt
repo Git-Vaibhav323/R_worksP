@@ -1,0 +1,31 @@
+REGIONAL ANALYSIS AND ANOVA
+Generated: 2026-10-12 23:11:10 IST
+
+SCOPE
+All regional means use complete-month years in 1901-2015 so that annual totals are defined
+and the window matches the national series. Subdivisions have different rainfall climates;
+a larger mean in Kerala than in West Rajasthan is a climatological fact, not a data error.
+Equal-weighted averages of subdivisions are NOT the national area-weighted series.
+
+Selected regions: Kerala, Coastal Karnataka, Gangetic West Bengal, Tamil Nadu, Punjab, West Rajasthan
+Balanced common years with all six present: 114 ( 1901 - 2015 ).
+
+ASSUMPTIONS
+Classical ANOVA needs independent groups, similar variances, and approximate normality.
+Regions are different places (independent groups is reasonable). Years within a region
+are a time series (independence across years is approximate).
+Fligner-Killeen variance test: chi-square = 202.21, p = < 0.0001.
+Shapiro-Wilk p-values by region: Kerala=0.0380; Coastal Karnataka=0.0014; Gangetic West Bengal=0.3310; Tamil Nadu=0.0002; Punjab=0.0005; West Rajasthan=0.0010 .
+If Fligner rejects equal variances, prefer Welch ANOVA and Bonferroni pairwise Welch tests.
+Kruskal-Wallis does not assume normality or equal variances (still assumes similar shapes).
+
+RESULTS
+Classical ANOVA F = 2134.70, df = 5, 678, p = < 0.0001.
+Welch ANOVA F = 1988.47, p = < 0.0001.
+Kruskal-Wallis chi-square = 639.91, df = 5, p = < 0.0001.
+Decision at alpha = 0.05: Reject equal regional means.
+Post-hoc: Tukey HSD (equal-variance) and Bonferroni-adjusted pairwise Welch and Wilcoxon
+are saved as CSV. Interpret Tukey cautiously if variances differ.
+
+Regional OLS slopes vs year are descriptive; Mann-Kendall in script 09 is preferred
+when residual autocorrelation is a concern. No causal climate attribution is made.

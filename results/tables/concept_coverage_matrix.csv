@@ -1,0 +1,32 @@
+concept,script,primary_tables,primary_graphs,report_section
+Descriptive mean/median/mode/min/max/range,R_code/03_descriptive_analysis.R,results/tables/descriptive_statistics.csv,"graphs/india_monthly_mean_rainfall.png; graphs/india_monthly_boxplots.png; graphs/india_seasonal_boxplot.png",Descriptive statistics
+Variance SD IQR percentiles CV skewness kurtosis SE,R_code/03_descriptive_analysis.R,results/tables/india_seasonal_annual_descriptive.csv; results/tables/india_monthly_descriptive.csv,graphs/india_seasonal_boxplot.png,Descriptive statistics
+Frequency summaries and empirical probabilities,R_code/03_descriptive_analysis.R,results/tables/empirical_probabilities.csv; results/tables/monsoon_category_frequencies.csv; results/tables/empirical_p_zero_rainfall_selected_regions.csv,,Probability
+Threshold and percentile exceedance probabilities,R_code/03_descriptive_analysis.R,results/tables/empirical_probabilities.csv,,Probability
+Conditional probability (dry winter and deficient monsoon),R_code/03_descriptive_analysis.R,results/tables/empirical_probabilities.csv,,Probability
+Histogram kernel density ECDF,R_code/04_probability_distributions.R,results/tables/distribution_fit_summary.csv,"graphs/india_annual_histogram_density.png; graphs/india_annual_ecdf.png",Distributions
+Normal Q-Q and Shapiro-Wilk,R_code/04_probability_distributions.R,results/tables/distribution_fit_summary.csv,graphs/india_annual_qq_normal.png,Distributions
+Gamma MLE fit and gamma Q-Q,R_code/04_probability_distributions.R,results/tables/distribution_fit_summary.csv,"graphs/india_annual_qq_gamma.png; graphs/india_annual_distribution_overlay.png",Distributions
+Exponential as a poor reference model,R_code/04_probability_distributions.R,results/tables/distribution_fit_summary.csv,graphs/india_annual_distribution_overlay.png,Distributions
+Parametric-bootstrap KS (not naive ks.test p-value),R_code/04_probability_distributions.R,results/tables/distribution_fit_summary.csv; results/statistical_outputs/distribution_fit_notes.txt,,Distributions
+Zero rainfall hurdle example,R_code/04_probability_distributions.R,results/tables/zero_inflated_month_example.csv,,Distributions
+Sampling distribution of the mean and CLT simulation,R_code/05_sampling_and_intervals.R,results/tables/clt_simulation_summary.csv,graphs/clt_sampling_distributions.png,Sampling and estimation
+Standard errors,R_code/03_descriptive_analysis.R; R_code/05_sampling_and_intervals.R,results/tables/descriptive_statistics.csv; results/tables/confidence_intervals.csv,,Sampling and estimation
+t confidence intervals 90/95/99 percent for the mean,R_code/05_sampling_and_intervals.R,results/tables/confidence_intervals.csv,graphs/confidence_intervals_mean_compare.png,Sampling and estimation
+Wald confidence intervals for a proportion,R_code/05_sampling_and_intervals.R,results/tables/confidence_intervals.csv,,Sampling and estimation
+One-sample t-test and Wilcoxon signed-rank,R_code/06_hypothesis_testing.R,results/tables/hypothesis_test_results.csv,results/statistical_outputs/hypothesis_testing_report.txt,Hypothesis testing
+Welch two-sample t-test and Wilcoxon rank-sum,R_code/06_hypothesis_testing.R,results/tables/hypothesis_test_results.csv,,Hypothesis testing
+Paired t-test and paired Wilcoxon,R_code/06_hypothesis_testing.R,results/tables/hypothesis_test_results.csv,,Hypothesis testing
+Chi-square goodness-of-fit on seasonal categories,R_code/06_hypothesis_testing.R,results/tables/wettest_season_counts.csv; results/tables/hypothesis_test_results.csv,,Hypothesis testing
+Chi-square test of independence,R_code/06_hypothesis_testing.R,results/tables/chisq_period_by_monsoon_category.csv,,Hypothesis testing
+Pearson and Spearman correlation tests,R_code/06_hypothesis_testing.R; R_code/07_correlation_regression.R,results/tables/correlation_significance_tests.csv; results/tables/seasonal_pairwise_correlations.csv,graphs/scatter_winter_vs_monsoon.png,Correlation
+Correlation matrix covariance heatmap,R_code/07_correlation_regression.R,results/tables/seasonal_pearson_correlation.csv; results/tables/seasonal_spearman_correlation.csv; results/tables/seasonal_covariance.csv,graphs/seasonal_correlation_heatmap.png,Correlation
+Simple linear regression annual on year,R_code/07_correlation_regression.R,results/tables/regression_coefficients.csv; results/tables/regression_model_fit.csv,graphs/regression_annual_vs_year.png,Regression
+Multiple linear regression monsoon on year and winter,R_code/07_correlation_regression.R,results/tables/regression_coefficients.csv; results/tables/regression_model_fit.csv,,Regression
+Residual diagnostics influence autocorrelation,R_code/07_correlation_regression.R,results/tables/regression_influence_annual_on_year.csv; results/tables/regression_model_fit.csv,graphs/regression_residual_diagnostics.png,Regression
+One-way ANOVA Welch ANOVA Kruskal-Wallis,R_code/08_regional_analysis.R,results/tables/anova_regional_annual.csv,graphs/selected_regions_annual_boxplots.png,ANOVA and regional analysis
+Post-hoc Tukey and Bonferroni pairwise,R_code/08_regional_analysis.R,results/tables/anova_tukey_hsd.csv; results/tables/anova_pairwise_welch_bonferroni.csv; results/tables/anova_pairwise_wilcoxon_bonferroni.csv,,ANOVA and regional analysis
+Regional means SD CV monthly summaries,R_code/08_regional_analysis.R,results/tables/regional_annual_summaries.csv; results/tables/regional_monthly_means.csv,"graphs/regional_mean_annual_rainfall.png; graphs/regional_cv_annual_rainfall.png",ANOVA and regional analysis
+Time-series plot and moving average,R_code/09_time_series_analysis.R,results/tables/annual_moving_average.csv,"graphs/india_annual_timeseries.png; graphs/india_jjas_timeseries.png",Time series
+Autocorrelation ACF PACF,R_code/09_time_series_analysis.R,results/tables/autocorrelation_annual.csv,graphs/india_annual_acf.png,Time series
+OLS trend vs Mann-Kendall and Sen slope,R_code/09_time_series_analysis.R,results/tables/trend_tests_national.csv; results/tables/regional_mann_kendall.csv; results/tables/regional_ols_trends.csv,graphs/india_annual_timeseries.png,Time series
